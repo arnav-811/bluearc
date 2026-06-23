@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Financial Tools | BlueArc</title>
+  <meta name="description" content="Free financial calculators: EMI, GST, Income Tax, and TDS — built by BlueArc advisors for Indian businesses and individuals." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(540px, 1fr));
+      gap: 40px;
+    }
+    @media (max-width: 680px) {
+      .tools-grid { grid-template-columns: 1fr; }
+    }
+    .tool-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 36px;
+      box-shadow: 0 2px 12px rgba(11,29,78,0.05);
+    }
+    .tool-card-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .tool-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: var(--light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .tool-icon svg { color: var(--cyan); }
+    .tool-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--navy);
+      margin: 0 0 4px;
+    }
+    .tool-card .tool-desc {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0;
+    }
+    .calc-field {
+      margin-bottom: 18px;
+    }
+    .calc-field label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .calc-field input,
+    .calc-field select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: var(--text);
+      background: var(--light);
+      box-sizing: border-box;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .calc-field input:focus,
+    .calc-field select:focus {
+      border-color: var(--cyan);
+      background: #fff;
+    }
+    .calc-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .calc-btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--navy);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 4px;
+    }
+    .calc-btn:hover { background: var(--cyan); }
+    .calc-result {
+      margin-top: 20px;
+      padding: 20px;
+      background: var(--light);
+      border-radius: 10px;
+      display: none;
+    }
+    .calc-result.show { display: block; }
+    .result-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+    }
+    .result-row:last-child { border-bottom: none; }
+    .result-row .rlabel { color: var(--muted); }
+    .result-row .rval { font-weight: 700; color: var(--navy); }
+    .result-row.highlight .rval { color: var(--cyan); font-size: 18px; }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 118" width="32" height="32">
+        <path d="M 5,62 A 55,55 0 0,1 115,62 L 93,62 A 33,33 0 0,0 27,62 Z" fill="#00AEEF"/>
+        <circle class="logo-dot-el" cx="60" cy="102" r="11" fill="rgba(255,255,255,0.5)"/>
+      </svg>
+      <span class="logo-text">Blue<em class="logo-arc">Arc</em></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+      <li class="nav-item has-dropdown">
+        <a href="services.html" class="nav-link">Services
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="services.html">All Services</a>
+          <div class="nav-dropdown-divider"></div>
+          <a href="services.html#business-setup">Business Setup in India</a>
+          <a href="services.html#offshore-accounting">Offshore Accounting</a>
+          <a href="services.html#direct-taxation">Direct Taxation</a>
+          <a href="services.html#indirect-taxation">Indirect Taxation</a>
+          <a href="services.html#audit-assurance">Audit &amp; Assurance</a>
+          <a href="services.html#virtual-cfo">Virtual CFO</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="sectors.html" class="nav-link">Sectors</a></li>
+      <li class="nav-item has-dropdown">
+        <a href="blogs.html" class="nav-link">Resources
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="blogs.html">Blogs</a>
+          <a href="case-study.html">Case Study</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="tools.html" class="nav-link" aria-current="page">Tools</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link nav-cta">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══ PAGE HERO ═══ -->
+<section class="page-hero">
+  <div class="page-hero-glow"></div>
+  <div class="container" style="position:relative;z-index:1">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span style="color:rgba(255,255,255,0.6)">Tools</span>
+    </div>
+    <span class="page-hero-label">Free Calculators</span>
+    <h1>Financial Tools</h1>
+    <p>Quick, accurate calculators built by BlueArc's advisory team for businesses and individuals.</p>
+  </div>
+</section>
+
+<!-- ═══ TOOLS ═══ -->
+<section class="section" style="background:var(--light)">
+  <div class="container">
+    <div class="tools-grid">
+
+      <!-- ── EMI Calculator ── -->
+      <div class="tool-card reveal">
+        <div class="tool-card-header">
+          <div class="tool-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/>
+            </svg>
+          </div>
+          <div>
+            <h3>EMI Calculator</h3>
+            <p class="tool-desc">Estimate your monthly loan repayment instantly.</p>
+          </div>
+        </div>
+
+        <div class="calc-field">
+          <label for="emi-principal">Loan Amount (₹)</label>
+          <input type="number" id="emi-principal" placeholder="e.g. 5000000" min="0" />
+        </div>
+        <div class="calc-row">
+          <div class="calc-field">
+            <label for="emi-rate">Annual Interest Rate (%)</label>
+            <input type="number" id="emi-rate" placeholder="e.g. 8.5" min="0" step="0.01" />
+          </div>
+          <div class="calc-field">
+            <label for="emi-tenure">Tenure (Years)</label>
+            <input type="number" id="emi-tenure" placeholder="e.g. 20" min="0" />
+          </div>
+        </div>
+        <button class="calc-btn" onclick="calcEMI()">Calculate EMI</button>
+
+        <div class="calc-result" id="emi-result">
+          <div class="result-row highlight">
+            <span class="rlabel">Monthly EMI</span>
+            <span class="rval" id="emi-monthly"></span>
+          </div>
+          <div class="result-row">
+            <span class="rlabel">Total Interest Payable</span>
+            <span class="rval" id="emi-interest"></span>
+          </div>
+          <div class="result-row">
+            <span class="rlabel">Total Amount Payable</span>
+            <span class="rval" id="emi-total"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── GST Calculator ── -->
+      <div class="tool-card reveal reveal-d1">
+        <div class="tool-card-header">
+          <div class="tool-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+            </svg>
+          </div>
+          <div>
+            <h3>GST Calculator</h3>
+            <p class="tool-desc">Add or remove GST from any amount.</p>
+          </div>
+        </div>
+
+        <div class="calc-field">
+          <label for="gst-amount">Amount (₹)</label>
+          <input type="number" id="gst-amount" placeholder="e.g. 10000" min="0" />
+        </div>
+        <div class="calc-row">
+          <div class="calc-field">
+            <label for="gst-rate">GST Rate</label>
+            <select id="gst-rate">
+              <option value="5">5%</option>
+              <option value="12">12%</option>
+              <option value="18" selected>18%</option>
+              <option value="28">28%</option>
+            </select>
+          </div>
+          <div class="calc-field">
+            <label for="gst-type">Type</label>
+            <select id="gst-type">
+              <option value="add">Add GST (exclusive)</option>
+              <option value="remove">Remove GST (inclusive)</option>
+            </select>
+          </div>
+        </div>
+        <button class="calc-btn" onclick="calcGST()">Calculate GST</button>
+
+        <div class="calc-result" id="gst-result">
+          <div class="result-row">
+            <span class="rlabel">Base Amount (pre-GST)</span>
+            <span class="rval" id="gst-base"></span>
+          </div>
+          <div class="result-row">
+            <span class="rlabel">CGST (<span id="gst-rate-display-c">9</span>%)</span>
+            <span class="rval" id="gst-cgst"></span>
+          </div>
+          <div class="result-row">
+            <span class="rlabel">SGST (<span id="gst-rate-display-s">9</span>%)</span>
+            <span class="rval" id="gst-sgst"></span>
+          </div>
+          <div class="result-row highlight">
+            <span class="rlabel">Total Amount (incl. GST)</span>
+            <span class="rval" id="gst-total"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Income Tax Calculator (New Regime FY2025-26) ── -->
+      <div class="tool-card reveal">
+        <div class="tool-card-header">
+          <div class="tool-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Income Tax Calculator</h3>
+            <p class="tool-desc">Estimate your tax under the New Regime (FY 2026-27).</p>
+          </div>
+        </div>
+
+        <div class="calc-field">
+          <label for="it-income">Annual Gross Income (₹)</label>
+          <input type="number" id="it-income" placeholder="e.g. 1200000" min="0" />
+        </div>
+        <div class="calc-field">
+          <label for="it-deductions">Standard Deduction (₹)</label>
+          <input type="number" id="it-deductions" value="75000" placeholder="75000" min="0" />
+        </div>
+        <button class="calc-btn" onclick="calcIT()">Calculate Tax</button>
+
+        <div class="calc-result" id="it-result">
+          <div class="result-row">
+            <span class="rlabel">Gross Income</span>
+            <span class="rval" id="it-gross"></span>
+          </div>
+          <div class="result-row">
+            <span class="rlabel">Standard Deduction</span>
+            <span class="rval" id="it-std-ded"></span>
+          </div>
+          <div class="result-row">
+            <span class="rlabel">Taxable Income</span>
+            <span class="rval" id="it-taxable"></span>
+          </div>
+          <div class="result-row highlight">
+            <span class="rlabel">Estimated Tax Payable</span>
+            <span class="rval" id="it-tax"></span>
+          </div>
+          <div class="result-row">
+            <span class="rlabel">Effective Tax Rate</span>
+            <span class="rval" id="it-rate"></span>
+          </div>
+        </div>
+        <p style="font-size:11px; color:var(--muted); margin-top:12px; line-height:1.6;">* Based on New Tax Regime FY2026-27 slabs. Surcharge and cess not included. For detailed planning, consult a BlueArc advisor.</p>
+      </div>
+
+      <!-- ── TDS Calculator ── -->
+      <div class="tool-card reveal reveal-d1">
+        <div class="tool-card-header">
+          <div class="tool-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <div>
+            <h3>TDS Calculator</h3>
+            <p class="tool-desc">Find the TDS amount applicable for a payment.</p>
+          </div>
+        </div>
+
+        <div class="calc-field">
+          <label for="tds-section">Payment Section</label>
+          <select id="tds-section" onchange="updateTDSRate()">
+            <option value="10" data-threshold="0">194A — Interest (10%)</option>
+            <option value="1_individual" data-threshold="30000">194C — Contractor Individual (1%)</option>
+            <option value="2_other" data-threshold="30000">194C — Contractor Others (2%)</option>
+            <option value="5" data-threshold="15000">194H — Commission/Brokerage (5%)</option>
+            <option value="10_rent" data-threshold="240000">194I — Rent (10%)</option>
+            <option value="10_prof" data-threshold="30000">194J — Professional Fees (10%)</option>
+            <option value="2_tech" data-threshold="30000">194J — Technical Services (2%)</option>
+            <option value="0.1" data-threshold="5000000">194Q — Purchase of Goods (0.1%)</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label for="tds-amount">Payment Amount (₹)</label>
+          <input type="number" id="tds-amount" placeholder="e.g. 50000" min="0" />
+        </div>
+        <button class="calc-btn" onclick="calcTDS()">Calculate TDS</button>
+
+        <div class="calc-result" id="tds-result">
+          <div class="result-row">
+            <span class="rlabel">Payment Amount</span>
+            <span class="rval" id="tds-payment"></span>
+          </div>
+          <div class="result-row">
+            <span class="rlabel">Applicable TDS Rate</span>
+            <span class="rval" id="tds-rate-display"></span>
+          </div>
+          <div class="result-row highlight">
+            <span class="rlabel">TDS to Deduct</span>
+            <span class="rval" id="tds-amount-display"></span>
+          </div>
+          <div class="result-row">
+            <span class="rlabel">Net Payment to Payee</span>
+            <span class="rval" id="tds-net"></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DISCLAIMER ═══ -->
+<section style="background:#fff; padding:40px 0;">
+  <div class="container">
+    <div style="background:var(--light); border-radius:12px; padding:28px 32px; border-left:4px solid var(--cyan);">
+      <h4 style="font-size:15px; font-weight:700; color:var(--navy); margin-bottom:8px;">Disclaimer</h4>
+      <p style="font-size:13px; color:var(--muted); line-height:1.7; margin:0;">These calculators are provided for informational purposes only and are based on generally applicable rules as of FY 2026-27. Results are indicative estimates and do not constitute professional tax or financial advice. Tax laws change frequently — please consult a BlueArc advisor for accurate, personalized guidance.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Need a More Detailed Analysis?</h2>
+    <p>Our team can model your specific scenario and deliver a complete tax and compliance plan.</p>
+    <a href="contact.html" class="btn btn-primary btn-lg btn-arrow">Talk to Our Advisors</a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 118" width="28" height="28">
+            <path d="M 5,62 A 55,55 0 0,1 115,62 L 93,62 A 33,33 0 0,0 27,62 Z" fill="#00AEEF"/>
+            <circle cx="60" cy="102" r="11" fill="rgba(0,174,239,0.5)"/>
+          </svg>
+          <span class="footer-logo-text">Blue<em>Arc</em></span>
+        </div>
+        <p>Financial &amp; Business Advisory for companies coming to India, startups, SMEs, and large enterprises across the globe.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Our Company</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="case-study.html">Case Study</a></li>
+          <li><a href="#">Code of Ethics</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Quicklinks</h5>
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="sectors.html">Sectors</a></li>
+          <li><a href="tools.html">Tools</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-newsletter">
+        <h5>Newsletter</h5>
+        <p>Sign up for our latest news &amp; articles. We won't send spam or irrelevant messages.</p>
+        <div class="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="Your email address" />
+          <button class="newsletter-btn">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright © BlueArc 2024. All rights reserved.</p>
+      <div class="footer-bottom-links"><a href="#">Privacy Policy</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  const fmt = n => '₹' + Math.round(n).toLocaleString('en-IN');
+
+  function calcEMI() {
+    const P = parseFloat(document.getElementById('emi-principal').value);
+    const r = parseFloat(document.getElementById('emi-rate').value) / 12 / 100;
+    const n = parseFloat(document.getElementById('emi-tenure').value) * 12;
+    if (!P || !r || !n) return;
+    const emi = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    const total = emi * n;
+    const interest = total - P;
+    document.getElementById('emi-monthly').textContent = fmt(emi);
+    document.getElementById('emi-interest').textContent = fmt(interest);
+    document.getElementById('emi-total').textContent = fmt(total);
+    document.getElementById('emi-result').classList.add('show');
+  }
+
+  function calcGST() {
+    const amount = parseFloat(document.getElementById('gst-amount').value);
+    const rate = parseFloat(document.getElementById('gst-rate').value);
+    const type = document.getElementById('gst-type').value;
+    if (!amount || !rate) return;
+    let base, gstAmt, total;
+    if (type === 'add') {
+      base = amount;
+      gstAmt = amount * rate / 100;
+      total = amount + gstAmt;
+    } else {
+      total = amount;
+      base = amount / (1 + rate / 100);
+      gstAmt = total - base;
+    }
+    const half = rate / 2;
+    document.getElementById('gst-base').textContent = fmt(base);
+    document.getElementById('gst-cgst').textContent = fmt(gstAmt / 2);
+    document.getElementById('gst-sgst').textContent = fmt(gstAmt / 2);
+    document.getElementById('gst-total').textContent = fmt(total);
+    document.getElementById('gst-rate-display-c').textContent = half;
+    document.getElementById('gst-rate-display-s').textContent = half;
+    document.getElementById('gst-result').classList.add('show');
+  }
+
+  function calcIT() {
+    const gross = parseFloat(document.getElementById('it-income').value);
+    const ded = parseFloat(document.getElementById('it-deductions').value) || 75000;
+    if (!gross) return;
+    const taxable = Math.max(0, gross - ded);
+    let tax = 0;
+    // New Regime FY2026-27 slabs
+    const slabs = [
+      [400000, 0],
+      [400000, 0.05],
+      [400000, 0.10],
+      [400000, 0.15],
+      [400000, 0.20],
+      [Infinity, 0.30]
+    ];
+    let remaining = taxable;
+    for (const [limit, rate] of slabs) {
+      if (remaining <= 0) break;
+      const taxed = Math.min(remaining, limit);
+      tax += taxed * rate;
+      remaining -= taxed;
+    }
+    // Rebate 87A — zero tax if taxable income ≤ 12 lakh
+    if (taxable <= 1200000) tax = 0;
+    const effectiveRate = gross > 0 ? (tax / gross * 100).toFixed(1) : '0.0';
+    document.getElementById('it-gross').textContent = fmt(gross);
+    document.getElementById('it-std-ded').textContent = '−' + fmt(ded);
+    document.getElementById('it-taxable').textContent = fmt(taxable);
+    document.getElementById('it-tax').textContent = fmt(tax);
+    document.getElementById('it-rate').textContent = effectiveRate + '%';
+    document.getElementById('it-result').classList.add('show');
+  }
+
+  function updateTDSRate() {}
+
+  function calcTDS() {
+    const sel = document.getElementById('tds-section');
+    const selectedOption = sel.options[sel.selectedIndex];
+    const rateStr = sel.value;
+    const threshold = parseFloat(selectedOption.dataset.threshold) || 0;
+    const payment = parseFloat(document.getElementById('tds-amount').value);
+    if (!payment) return;
+
+    let rate;
+    if (rateStr === '1_individual') rate = 1;
+    else if (rateStr === '2_other') rate = 2;
+    else if (rateStr === '10_rent') rate = 10;
+    else if (rateStr === '10_prof') rate = 10;
+    else if (rateStr === '2_tech') rate = 2;
+    else rate = parseFloat(rateStr);
+
+    const tdsAmt = payment >= threshold ? payment * rate / 100 : 0;
+    const netAmt = payment - tdsAmt;
+
+    document.getElementById('tds-payment').textContent = fmt(payment);
+    document.getElementById('tds-rate-display').textContent = rate + '%' + (payment < threshold ? ' (below threshold — no TDS)' : '');
+    document.getElementById('tds-amount-display').textContent = fmt(tdsAmt);
+    document.getElementById('tds-net').textContent = fmt(netAmt);
+    document.getElementById('tds-result').classList.add('show');
+  }
+</script>
+</body>
+</html>

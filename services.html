@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | BlueArc</title>
+  <meta name="description" content="Comprehensive financial, tax, and advisory solutions tailored to your business needs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 118" width="32" height="32">
+        <path d="M 5,62 A 55,55 0 0,1 115,62 L 93,62 A 33,33 0 0,0 27,62 Z" fill="#00AEEF"/>
+        <circle class="logo-dot-el" cx="60" cy="102" r="11" fill="rgba(255,255,255,0.5)"/>
+      </svg>
+      <span class="logo-text">Blue<em class="logo-arc">Arc</em></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+      <li class="nav-item has-dropdown">
+        <a href="services.html" class="nav-link" aria-current="page">Services
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="services.html">All Services</a>
+          <div class="nav-dropdown-divider"></div>
+          <a href="#business-setup">Business Setup in India</a>
+          <a href="#offshore-accounting">Offshore Accounting</a>
+          <a href="#direct-taxation">Direct Taxation</a>
+          <a href="#indirect-taxation">Indirect Taxation</a>
+          <a href="#audit-assurance">Audit &amp; Assurance</a>
+          <a href="#virtual-cfo">Virtual CFO</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="sectors.html" class="nav-link">Sectors</a></li>
+      <li class="nav-item has-dropdown">
+        <a href="blogs.html" class="nav-link">Resources
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="blogs.html">Blogs</a>
+          <a href="case-study.html">Case Study</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="tools.html" class="nav-link">Tools</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link nav-cta">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══ PAGE HERO ═══ -->
+<section class="page-hero">
+  <div class="page-hero-glow"></div>
+  <div class="container" style="position:relative;z-index:1">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span style="color:rgba(255,255,255,0.6)">Services</span>
+    </div>
+    <span class="page-hero-label">What We Offer</span>
+    <h1>Our Services</h1>
+    <p>Comprehensive financial, tax, and advisory solutions tailored to your business needs.</p>
+  </div>
+</section>
+
+<!-- ═══ SERVICES GRID ═══ -->
+<section class="services-full section">
+  <div class="container">
+    <div class="services-full-grid">
+
+      <div class="service-full-card reveal" id="business-setup">
+        <div class="service-full-num">01</div>
+        <div class="service-full-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Business Setup in India</h3>
+        <p>At BlueArc, we pave the way for your successful entry into the Indian market, ensuring regulatory compliance. From company incorporation and IPRs to contracts and MOUs, we guide you through every step of establishing your presence in India.</p>
+        <div class="service-card-footer">
+          <span class="service-card-tag">Inbound Services</span>
+        </div>
+      </div>
+
+      <div class="service-full-card reveal reveal-d1" id="offshore-accounting">
+        <div class="service-full-num">02</div>
+        <div class="service-full-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3>Offshore Accounting</h3>
+        <p>At BlueArc, we provide end-to-end offshore accounting solutions to businesses across the globe. Using cloud platforms like XERO and QuickBooks, we ensure full compliance with the UK, Germany, USA, and other countries' regulatory frameworks.</p>
+        <div class="service-card-footer">
+          <span class="service-card-tag">Outbound Services</span>
+        </div>
+      </div>
+
+      <div class="service-full-card reveal reveal-d2" id="legacy-management">
+        <div class="service-full-num">03</div>
+        <div class="service-full-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Strategic Operations for Legacy Management</h3>
+        <p>At BlueArc, we understand that managing a family office requires more than just finance, it demands trust. We provide bespoke advisory for legacy management, succession planning, and wealth structuring for family-run enterprises.</p>
+        <div class="service-card-footer">
+          <span class="service-card-tag">Advisory</span>
+        </div>
+      </div>
+
+      <div class="service-full-card reveal" id="strategic-advisory">
+        <div class="service-full-num">04</div>
+        <div class="service-full-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Strategic Advisory &amp; Business Intelligence</h3>
+        <p>At BlueArc, we partner with organizations to unlock operational clarity and financial strength. From M&amp;A and private equity to growth capital and joint ventures, we bring the strategic intelligence your business needs to scale.</p>
+        <div class="service-card-footer">
+          <span class="service-card-tag">Corporate Advisory</span>
+        </div>
+      </div>
+
+      <div class="service-full-card reveal reveal-d1" id="audit-assurance">
+        <div class="service-full-num">05</div>
+        <div class="service-full-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <h3>Assurance, Audit &amp; Attestation</h3>
+        <p>We provide comprehensive audit and assurance services to strengthen financial integrity and transparency. Our rigorous approach helps businesses meet statutory requirements while building stakeholder confidence.</p>
+        <div class="service-card-footer">
+          <span class="service-card-tag">Audit</span>
+        </div>
+      </div>
+
+      <div class="service-full-card reveal reveal-d2" id="direct-taxation">
+        <div class="service-full-num">06</div>
+        <div class="service-full-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3>Direct Taxation</h3>
+        <p>India's taxation system is among the more complex systems globally and is constantly being updated. Our team of tax experts ensures you remain compliant while optimising your tax position through smart structuring and planning.</p>
+        <div class="service-card-footer">
+          <span class="service-card-tag">Taxation</span>
+        </div>
+      </div>
+
+      <div class="service-full-card reveal" id="indirect-taxation">
+        <div class="service-full-num">07</div>
+        <div class="service-full-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h3>Indirect Taxation</h3>
+        <p>The indirect tax system in India underwent a major change in July 2017 with the introduction of GST. We help businesses navigate GST compliance, filing, input tax credits, and dispute resolution seamlessly.</p>
+        <div class="service-card-footer">
+          <span class="service-card-tag">GST &amp; Taxation</span>
+        </div>
+      </div>
+
+      <div class="service-full-card reveal reveal-d1">
+        <div class="service-full-num">08</div>
+        <div class="service-full-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        </div>
+        <h3>Outsourced Accounting &amp; Tax Services in India</h3>
+        <p>Managing accounting and tax compliance can be time-consuming and complex, especially for growth-focused businesses. We provide fully outsourced accounting functions, letting you focus on what matters most.</p>
+        <div class="service-card-footer">
+          <span class="service-card-tag">Accounting</span>
+        </div>
+      </div>
+
+      <div class="service-full-card reveal reveal-d2">
+        <div class="service-full-num">09</div>
+        <div class="service-full-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h3>Transfer Pricing Advisory</h3>
+        <p>In an increasingly globalized environment, MNCs must ensure compliance with transfer pricing regulations. We provide robust transfer pricing documentation, benchmarking studies, and advisory to mitigate risk.</p>
+        <div class="service-card-footer">
+          <span class="service-card-tag">International Tax</span>
+        </div>
+      </div>
+
+      <div class="service-full-card reveal">
+        <div class="service-full-num">10</div>
+        <div class="service-full-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </div>
+        <h3>Commercial &amp; Legal Assistance</h3>
+        <p>Navigating the legal and regulatory landscape is crucial for businesses to operate smoothly. We offer support across contracts, MOUs, commercial agreements, and dispute resolution through our expert legal team.</p>
+        <div class="service-card-footer">
+          <span class="service-card-tag">Legal</span>
+        </div>
+      </div>
+
+      <div class="service-full-card reveal reveal-d1">
+        <div class="service-full-num">11</div>
+        <div class="service-full-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <h3>Startup India (DPIIT Registration)</h3>
+        <p>DPIIT registration is an essential step for startups in India to avail government incentives and benefits. We guide startups through registration, funding, investment decks, projections, valuations, and incubation services.</p>
+        <div class="service-card-footer">
+          <span class="service-card-tag">Startup Services</span>
+        </div>
+      </div>
+
+      <div class="service-full-card reveal reveal-d2" id="virtual-cfo">
+        <div class="service-full-num">12</div>
+        <div class="service-full-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="2"/></svg>
+        </div>
+        <h3>Virtual CFO</h3>
+        <p>An outsourced finance professional who provides financial management and strategic guidance without the cost of a full-time hire. Our Virtual CFO service gives you boardroom-level financial leadership on demand.</p>
+        <div class="service-card-footer">
+          <span class="service-card-tag">CFO Services</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="not-sure reveal">
+      <h3>Not sure which service is right for you?</h3>
+      <p>Our team is happy to understand your needs and recommend the most suitable solution for your business.</p>
+      <a href="contact.html" class="btn btn-primary btn-arrow">Talk to Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 118" width="28" height="28">
+            <path d="M 5,62 A 55,55 0 0,1 115,62 L 93,62 A 33,33 0 0,0 27,62 Z" fill="#00AEEF"/>
+            <circle cx="60" cy="102" r="11" fill="rgba(0,174,239,0.5)"/>
+          </svg>
+          <span class="footer-logo-text">Blue<em>Arc</em></span>
+        </div>
+        <p>Financial &amp; Business Advisory for companies coming to India, startups, SMEs, and large enterprises across the globe.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Our Company</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="case-study.html">Case Study</a></li>
+          <li><a href="#">Code of Ethics</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Quicklinks</h5>
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="sectors.html">Sectors</a></li>
+          <li><a href="tools.html">Tools</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-newsletter">
+        <h5>Newsletter</h5>
+        <p>Sign up for our latest news &amp; articles. We won't send spam or irrelevant messages.</p>
+        <div class="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="Your email address" />
+          <button class="newsletter-btn">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright © BlueArc 2024. All rights reserved.</p>
+      <div class="footer-bottom-links"><a href="#">Privacy Policy</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

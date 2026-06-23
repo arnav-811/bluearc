@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blogs | BlueArc</title>
+  <meta name="description" content="Insights, updates, and expert guidance on taxation, compliance, and financial planning from the BlueArc team." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 118" width="32" height="32">
+        <path d="M 5,62 A 55,55 0 0,1 115,62 L 93,62 A 33,33 0 0,0 27,62 Z" fill="#00AEEF"/>
+        <circle class="logo-dot-el" cx="60" cy="102" r="11" fill="rgba(255,255,255,0.5)"/>
+      </svg>
+      <span class="logo-text">Blue<em class="logo-arc">Arc</em></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+      <li class="nav-item has-dropdown">
+        <a href="services.html" class="nav-link">Services
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="services.html">All Services</a>
+          <div class="nav-dropdown-divider"></div>
+          <a href="services.html#business-setup">Business Setup in India</a>
+          <a href="services.html#offshore-accounting">Offshore Accounting</a>
+          <a href="services.html#direct-taxation">Direct Taxation</a>
+          <a href="services.html#indirect-taxation">Indirect Taxation</a>
+          <a href="services.html#audit-assurance">Audit &amp; Assurance</a>
+          <a href="services.html#virtual-cfo">Virtual CFO</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="sectors.html" class="nav-link">Sectors</a></li>
+      <li class="nav-item has-dropdown">
+        <a href="blogs.html" class="nav-link" aria-current="page">Resources
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="blogs.html">Blogs</a>
+          <a href="case-study.html">Case Study</a>
+        </div>
+      </li>
+      <li class="nav-item"><a href="tools.html" class="nav-link">Tools</a></li>
+      <li class="nav-item"><a href="contact.html" class="nav-link nav-cta">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ═══ PAGE HERO ═══ -->
+<section class="page-hero">
+  <div class="page-hero-glow"></div>
+  <div class="container" style="position:relative;z-index:1">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span style="color:rgba(255,255,255,0.6)">Blogs</span>
+    </div>
+    <span class="page-hero-label">Resources</span>
+    <h1>Insights &amp; Resources</h1>
+    <p>Expert guidance on taxation, compliance, and financial planning from the BlueArc team.</p>
+  </div>
+</section>
+
+<!-- ═══ BLOG LISTING ═══ -->
+<section class="section" style="background:#fff">
+  <div class="container">
+
+    <!-- Post 1 -->
+    <article id="tds-rate-chart" style="border-bottom:1px solid var(--border); padding-bottom:64px; margin-bottom:64px;">
+      <div style="display:flex; gap:12px; align-items:center; margin-bottom:20px; flex-wrap:wrap;">
+        <span style="padding:4px 14px; background:var(--cyan); color:#fff; border-radius:20px; font-size:11px; font-weight:700; letter-spacing:0.5px;">Taxation</span>
+        <span style="font-size:13px; color:var(--muted);">1 June 2026</span>
+        <span style="color:var(--border)">·</span>
+        <span style="font-size:13px; color:var(--muted);">5 min read</span>
+      </div>
+      <h2 style="font-family:'Playfair Display',serif; font-size:clamp(24px,3vw,36px); color:var(--navy); margin-bottom:16px; line-height:1.25;">TDS Rate Chart, FY 2026-27 (AY 2027-28)</h2>
+      <p style="font-size:16px; color:var(--muted); line-height:1.8; margin-bottom:20px;">A comprehensive TDS rate chart for FY 2026-27 covering all sections under the Income Tax Act. Know the applicable rates for salary, interest, rent, professional fees, and more.</p>
+
+      <div style="background:var(--light); border-radius:10px; padding:32px; margin-bottom:24px;">
+        <h4 style="font-family:'Playfair Display',serif; font-size:18px; color:var(--navy); margin-bottom:20px;">Key TDS Rates at a Glance</h4>
+        <div style="overflow-x:auto;">
+          <table style="width:100%; border-collapse:collapse; font-size:14px;">
+            <thead>
+              <tr style="background:var(--navy); color:#fff;">
+                <th style="padding:12px 16px; text-align:left; border-radius:6px 0 0 0;">Section</th>
+                <th style="padding:12px 16px; text-align:left;">Nature of Payment</th>
+                <th style="padding:12px 16px; text-align:left; border-radius:0 6px 0 0;">TDS Rate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--border);">
+                <td style="padding:12px 16px; color:var(--cyan); font-weight:600;">192</td>
+                <td style="padding:12px 16px; color:var(--text);">Salary</td>
+                <td style="padding:12px 16px; color:var(--text);">As per slab rates</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--border); background:var(--light);">
+                <td style="padding:12px 16px; color:var(--cyan); font-weight:600;">194A</td>
+                <td style="padding:12px 16px; color:var(--text);">Interest (other than securities)</td>
+                <td style="padding:12px 16px; color:var(--text);">10%</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--border);">
+                <td style="padding:12px 16px; color:var(--cyan); font-weight:600;">194C</td>
+                <td style="padding:12px 16px; color:var(--text);">Payment to contractor / sub-contractor</td>
+                <td style="padding:12px 16px; color:var(--text);">1% (Individual/HUF) / 2% (Others)</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--border); background:var(--light);">
+                <td style="padding:12px 16px; color:var(--cyan); font-weight:600;">194H</td>
+                <td style="padding:12px 16px; color:var(--text);">Commission or brokerage</td>
+                <td style="padding:12px 16px; color:var(--text);">5%</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--border);">
+                <td style="padding:12px 16px; color:var(--cyan); font-weight:600;">194I</td>
+                <td style="padding:12px 16px; color:var(--text);">Rent (land, building, furniture)</td>
+                <td style="padding:12px 16px; color:var(--text);">10%</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--border); background:var(--light);">
+                <td style="padding:12px 16px; color:var(--cyan); font-weight:600;">194J</td>
+                <td style="padding:12px 16px; color:var(--text);">Professional / technical fees</td>
+                <td style="padding:12px 16px; color:var(--text);">10% (2% for technical services)</td>
+              </tr>
+              <tr style="background:var(--light);">
+                <td style="padding:12px 16px; color:var(--cyan); font-weight:600;">194Q</td>
+                <td style="padding:12px 16px; color:var(--text);">Purchase of goods</td>
+                <td style="padding:12px 16px; color:var(--text);">0.1%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <p style="font-size:15px; color:var(--muted); line-height:1.8; margin-bottom:16px;">TDS (Tax Deducted at Source) is a mechanism where tax is deducted at the point of payment itself. The deductor is responsible for deducting the applicable TDS and depositing it with the government within the stipulated time frame.</p>
+      <p style="font-size:15px; color:var(--muted); line-height:1.8; margin-bottom:24px;">Non-compliance with TDS provisions can attract penalties, interest, and even disallowance of expenses. It is therefore critical for businesses to maintain accurate TDS records and file returns on time.</p>
+      <a href="contact.html" class="btn btn-outline btn-sm btn-arrow">Speak to Our Tax Team</a>
+    </article>
+
+    <!-- Post 2 -->
+    <article id="capital-gains" style="border-bottom:1px solid var(--border); padding-bottom:64px; margin-bottom:64px;">
+      <div style="display:flex; gap:12px; align-items:center; margin-bottom:20px; flex-wrap:wrap;">
+        <span style="padding:4px 14px; background:var(--navy); color:#fff; border-radius:20px; font-size:11px; font-weight:700; letter-spacing:0.5px;">Tax Planning</span>
+        <span style="font-size:13px; color:var(--muted);">22 May 2026</span>
+        <span style="color:var(--border)">·</span>
+        <span style="font-size:13px; color:var(--muted);">7 min read</span>
+      </div>
+      <h2 style="font-family:'Playfair Display',serif; font-size:clamp(24px,3vw,36px); color:var(--navy); margin-bottom:16px; line-height:1.25;">Capital Gains Planning – How to Save Tax Legally</h2>
+      <p style="font-size:16px; color:var(--muted); line-height:1.8; margin-bottom:20px;">Discover legal strategies to minimize capital gains tax on equity, mutual funds, and property. Learn about indexation, reinvestment exemptions, and timing your exits.</p>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:16px; margin-bottom:28px;">
+        <div style="background:var(--light); border-radius:10px; padding:24px; border-left:3px solid var(--cyan);">
+          <div style="font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--cyan); margin-bottom:8px;">Strategy 1</div>
+          <div style="font-size:15px; font-weight:600; color:var(--navy); margin-bottom:6px;">Indexation Benefit</div>
+          <div style="font-size:13px; color:var(--muted);">Adjust the purchase cost of assets for inflation using the Cost Inflation Index (CII) to reduce your taxable long-term capital gain.</div>
+        </div>
+        <div style="background:var(--light); border-radius:10px; padding:24px; border-left:3px solid var(--cyan);">
+          <div style="font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--cyan); margin-bottom:8px;">Strategy 2</div>
+          <div style="font-size:15px; font-weight:600; color:var(--navy); margin-bottom:6px;">Section 54 Exemption</div>
+          <div style="font-size:13px; color:var(--muted);">Reinvest gains from property sale into a new residential property within the prescribed time to claim full or partial capital gains exemption.</div>
+        </div>
+        <div style="background:var(--light); border-radius:10px; padding:24px; border-left:3px solid var(--cyan);">
+          <div style="font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--cyan); margin-bottom:8px;">Strategy 3</div>
+          <div style="font-size:15px; font-weight:600; color:var(--navy); margin-bottom:6px;">Tax Harvesting</div>
+          <div style="font-size:13px; color:var(--muted);">Systematically book long-term capital gains up to ₹1.25 lakh per year (tax-free for equity) to reset your cost basis and reduce future tax liability.</div>
+        </div>
+        <div style="background:var(--light); border-radius:10px; padding:24px; border-left:3px solid var(--cyan);">
+          <div style="font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--cyan); margin-bottom:8px;">Strategy 4</div>
+          <div style="font-size:15px; font-weight:600; color:var(--navy); margin-bottom:6px;">Section 54EC Bonds</div>
+          <div style="font-size:13px; color:var(--muted);">Invest up to ₹50 lakhs in specified bonds (NHAI, REC) within 6 months of sale to claim long-term capital gains exemption on property.</div>
+        </div>
+      </div>
+
+      <p style="font-size:15px; color:var(--muted); line-height:1.8; margin-bottom:24px;">The key to effective capital gains planning is timing. By aligning your exits with the financial year and understanding the holding period requirements, you can significantly reduce your tax outgo while staying completely within the bounds of the law.</p>
+      <a href="contact.html" class="btn btn-outline btn-sm btn-arrow">Talk to Our Tax Experts</a>
+    </article>
+
+    <!-- Post 3 -->
+    <article id="ltcg-stcg">
+      <div style="display:flex; gap:12px; align-items:center; margin-bottom:20px; flex-wrap:wrap;">
+        <span style="padding:4px 14px; background:var(--cyan); color:#fff; border-radius:20px; font-size:11px; font-weight:700; letter-spacing:0.5px;">Taxation</span>
+        <span style="font-size:13px; color:var(--muted);">13 May 2026</span>
+        <span style="color:var(--border)">·</span>
+        <span style="font-size:13px; color:var(--muted);">6 min read</span>
+      </div>
+      <h2 style="font-family:'Playfair Display',serif; font-size:clamp(24px,3vw,36px); color:var(--navy); margin-bottom:16px; line-height:1.25;">Long Term and Short Term Capital Gain on Various Income</h2>
+      <p style="font-size:16px; color:var(--muted); line-height:1.8; margin-bottom:24px;">Understand the distinction between LTCG and STCG across different asset classes — equities, debt funds, real estate, and gold — and how each is taxed under Indian law.</p>
+
+      <div style="overflow-x:auto; margin-bottom:28px;">
+        <table style="width:100%; border-collapse:collapse; font-size:14px;">
+          <thead>
+            <tr style="background:var(--navy); color:#fff;">
+              <th style="padding:12px 16px; text-align:left;">Asset Class</th>
+              <th style="padding:12px 16px; text-align:left;">STCG Holding Period</th>
+              <th style="padding:12px 16px; text-align:left;">STCG Tax Rate</th>
+              <th style="padding:12px 16px; text-align:left;">LTCG Holding Period</th>
+              <th style="padding:12px 16px; text-align:left;">LTCG Tax Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 16px; font-weight:600; color:var(--navy);">Listed Equity Shares</td>
+              <td style="padding:12px 16px; color:var(--text);">&lt; 12 months</td>
+              <td style="padding:12px 16px; color:var(--text);">20%</td>
+              <td style="padding:12px 16px; color:var(--text);">≥ 12 months</td>
+              <td style="padding:12px 16px; color:var(--cyan); font-weight:600;">12.5% (above ₹1.25L)</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border); background:var(--light);">
+              <td style="padding:12px 16px; font-weight:600; color:var(--navy);">Equity Mutual Funds</td>
+              <td style="padding:12px 16px; color:var(--text);">&lt; 12 months</td>
+              <td style="padding:12px 16px; color:var(--text);">20%</td>
+              <td style="padding:12px 16px; color:var(--text);">≥ 12 months</td>
+              <td style="padding:12px 16px; color:var(--cyan); font-weight:600;">12.5% (above ₹1.25L)</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 16px; font-weight:600; color:var(--navy);">Debt Mutual Funds</td>
+              <td style="padding:12px 16px; color:var(--text);">&lt; 24 months</td>
+              <td style="padding:12px 16px; color:var(--text);">Slab rates</td>
+              <td style="padding:12px 16px; color:var(--text);">≥ 24 months</td>
+              <td style="padding:12px 16px; color:var(--cyan); font-weight:600;">Slab rates (no indexation)</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border); background:var(--light);">
+              <td style="padding:12px 16px; font-weight:600; color:var(--navy);">Real Estate</td>
+              <td style="padding:12px 16px; color:var(--text);">&lt; 24 months</td>
+              <td style="padding:12px 16px; color:var(--text);">Slab rates</td>
+              <td style="padding:12px 16px; color:var(--text);">≥ 24 months</td>
+              <td style="padding:12px 16px; color:var(--cyan); font-weight:600;">12.5% (no indexation)</td>
+            </tr>
+            <tr style="background:var(--light);">
+              <td style="padding:12px 16px; font-weight:600; color:var(--navy);">Gold / Other Assets</td>
+              <td style="padding:12px 16px; color:var(--text);">&lt; 24 months</td>
+              <td style="padding:12px 16px; color:var(--text);">Slab rates</td>
+              <td style="padding:12px 16px; color:var(--text);">≥ 24 months</td>
+              <td style="padding:12px 16px; color:var(--cyan); font-weight:600;">12.5%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p style="font-size:15px; color:var(--muted); line-height:1.8; margin-bottom:24px;">Understanding the classification of your gains is the first step toward effective tax planning. The distinction between short-term and long-term is determined solely by the holding period of the asset — and getting it right can mean a significantly lower tax bill.</p>
+      <a href="contact.html" class="btn btn-outline btn-sm btn-arrow">Get Expert Tax Advice</a>
+    </article>
+
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Let's Discuss Your Financial Future</h2>
+    <p>Have a tax or compliance question? Our team is always happy to help.</p>
+    <a href="contact.html" class="btn btn-primary btn-lg btn-arrow">Request a Consultation</a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 118" width="28" height="28">
+            <path d="M 5,62 A 55,55 0 0,1 115,62 L 93,62 A 33,33 0 0,0 27,62 Z" fill="#00AEEF"/>
+            <circle cx="60" cy="102" r="11" fill="rgba(0,174,239,0.5)"/>
+          </svg>
+          <span class="footer-logo-text">Blue<em>Arc</em></span>
+        </div>
+        <p>Financial &amp; Business Advisory for companies coming to India, startups, SMEs, and large enterprises across the globe.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Our Company</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="case-study.html">Case Study</a></li>
+          <li><a href="#">Code of Ethics</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Quicklinks</h5>
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="sectors.html">Sectors</a></li>
+          <li><a href="tools.html">Tools</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-newsletter">
+        <h5>Newsletter</h5>
+        <p>Sign up for our latest news &amp; articles. We won't send spam or irrelevant messages.</p>
+        <div class="newsletter-form">
+          <input type="email" class="newsletter-input" placeholder="Your email address" />
+          <button class="newsletter-btn">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright © BlueArc 2024. All rights reserved.</p>
+      <div class="footer-bottom-links"><a href="#">Privacy Policy</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
